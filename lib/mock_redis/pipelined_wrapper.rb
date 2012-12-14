@@ -38,6 +38,7 @@ class MockRedis
           e
         end
       end
+      responses.map! { |v| v.flatten if v.kind_of?(Hash) }
       @pipelined_commands = []
       responses
     end
